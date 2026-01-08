@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
-
+import { useRouter } from "next/navigation"
 interface FAQItem {
   question: string
   answer: string
@@ -10,6 +10,7 @@ interface FAQItem {
 
 const FAQPage = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -185,9 +186,9 @@ const FAQPage = () => {
             Schedule Your <span className="text-blue-600">Appointment</span> Today
           </h2>
           <div className="text-4xl md:text-5xl font-bold text-white mb-8">
-   0861770636
+            0861770636
           </div>
-          <button className="bg-transparent text-white px-8 py-3 rounded-lg font-semibold border-2 border-white hover:bg-white hover:text-gray-900 transition-colors">
+          <button onClick={() => router.push("/appointment")} className="bg-transparent cursor-pointer text-white px-8 py-3 rounded-lg font-semibold border-2 border-white hover:bg-white hover:text-gray-900 transition-colors">
             Schedule An Appointment
           </button>
         </div>
