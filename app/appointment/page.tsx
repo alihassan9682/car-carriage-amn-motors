@@ -15,10 +15,48 @@ export default function AppointmentPage() {
     message: ''
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<'' | 'loading' | 'success' | 'error'>('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Appointment booked:', formData)
-    // Handle form submission
+    setStatus('loading')
+
+    try {
+      const subject = `Appointment Booking: ${formData.service} for ${formData.vehicle}`
+      const message = `
+        Vehicle: ${formData.vehicle}
+        Service: ${formData.service}
+        Preferred Date: ${formData.date}
+        Preferred Time: ${formData.time}
+        Message: ${formData.message}
+      `
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject,
+          message
+        })
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', phone: '', vehicle: '', service: '', date: '', time: '', message: '' })
+        alert('Appointment request sent successfully! We will contact you to confirm.')
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (err) {
+      console.error(err)
+      setStatus('error')
+      alert('Failed to send request. Please try again later.')
+    } finally {
+      setTimeout(() => setStatus(''), 5000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -151,11 +189,27 @@ export default function AppointmentPage() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Select Service</option>
-                <option value="general-service">General Service</option>
-                <option value="nct-preparation">NCT Preparation</option>
-                <option value="brake-service">Brake Service</option>
-                <option value="tyre-service">Tyre Service</option>
-                <option value="engine-diagnostics">Engine Diagnostics</option>
+                <option value="car-servicing">Car Servicing</option>
+                <option value="tyres-dublin">Tyres Dublin</option>
+                <option value="water-pumps">Water Pumps</option>
+                <option value="radiators">Radiators</option>
+                <option value="exhausts">Exhausts</option>
+                <option value="alternators">Alternators</option>
+                <option value="starter-motors">Starter Motors</option>
+                <option value="car-breakdowns">Car Breakdowns</option>
+                <option value="changing-timing-belts">Changing Timing Belts</option>
+                <option value="car-battery-replacement">Car Battery Replacement</option>
+                <option value="fault-diagnosis">Fault Diagnosis</option>
+                <option value="light-repairs">Light Repairs</option>
+                <option value="breakdowns-dublin">Breakdowns Dublin</option>
+                <option value="none-starters">None Starters</option>
+                <option value="brake-pads">Brake Pads</option>
+                <option value="suspension">Suspension</option>
+                <option value="fuel-injectors">Fuel Injectors</option>
+                <option value="break-discs">Break Discs</option>
+                <option value="steering-racks">Steering Racks</option>
+                <option value="drive-shafts">Drive Shafts</option>
+                <option value="differentials">Differentials</option>
                 <option value="other">Other</option>
               </select>
             </div>

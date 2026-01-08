@@ -26,9 +26,21 @@ const FeaturesAndBrands = () => {
     }
   ]
 
-  const carBrands = [
-    'Toyota', 'Ford', 'Volkswagen', 'BMW',
-    'Audi', 'Nissan', 'Hyundai', 'Mercedes'
+  const brands = [
+    { id: 'audi', name: 'Audi', logo: 'https://www.carlogos.org/car-logos/audi-logo.png' },
+    { id: 'bmw', name: 'BMW', logo: 'https://www.carlogos.org/car-logos/bmw-logo.png' },
+    { id: 'mercedes', name: 'Mercedes-Benz', logo: 'https://www.carlogos.org/car-logos/mercedes-benz-logo.png' },
+    { id: 'volvo', name: 'Volvo', logo: 'https://www.carlogos.org/car-logos/volvo-logo.png' },
+    { id: 'toyota', name: 'Toyota', logo: 'https://www.carlogos.org/car-logos/toyota-logo.png' },
+    { id: 'citroen', name: 'Citroën', logo: 'https://www.carlogos.org/car-logos/citroen-logo.png' },
+    { id: 'nissan', name: 'Nissan', logo: 'https://www.carlogos.org/car-logos/nissan-logo.png' },
+    { id: 'vw', name: 'Volkswagen', logo: 'https://www.carlogos.org/car-logos/volkswagen-logo.png' },
+    { id: 'honda', name: 'Honda', logo: 'https://www.carlogos.org/car-logos/honda-logo.png' },
+    { id: 'ford', name: 'Ford', logo: 'https://www.carlogos.org/car-logos/ford-logo.png' },
+    { id: 'skoda', name: 'Skoda', logo: 'https://www.carlogos.org/car-logos/skoda-logo.png' },
+    { id: 'jaguar', name: 'Jaguar', logo: 'https://www.carlogos.org/car-logos/jaguar-logo.png' },
+    { id: 'kia', name: 'Kia', logo: 'https://www.carlogos.org/car-logos/kia-logo.png' },
+    { id: 'renault', name: 'Renault', logo: 'https://www.carlogos.org/car-logos/renault-logo.png' }
   ]
 
   return (
@@ -40,14 +52,15 @@ const FeaturesAndBrands = () => {
             {features.map((feature, index) => {
               const IconComponent = feature.icon
               return (
-                <div key={index} className="text-center">
-                  <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <IconComponent className="text-blue-600 w-8 h-8" />
+                <div key={index} className="text-center group p-8 rounded-2xl hover:bg-gray-50 transition-all duration-300">
+                  <div className="bg-blue-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-6 transition-transform">
+                    <IconComponent className="text-blue-600 w-10 h-10" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                  <button className="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center justify-center mx-auto">
                     {feature.buttonText}
+                    <span className="ml-2">→</span>
                   </button>
                 </div>
               )
@@ -56,43 +69,32 @@ const FeaturesAndBrands = () => {
         </div>
       </section>
 
-      {/* Section B: Car Brands We Service */}
-      <section className="py-20 bg-gray-50">
+      {/* Section B: Brand Showcase */}
+      <section className="py-24 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Image */}
-            <div className="order-2 lg:order-1">
-              <Image
-                src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80"
-                alt="Modern garage with car"
-                width={800}
-                height={600}
-                className="rounded-lg shadow-lg object-cover w-full h-96"
-              />
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
+              We Repair All Makes of <span className="text-blue-600">Automobiles</span>
+            </h2>
+            <p className="text-xl text-gray-600 font-medium">
+              We Work With All Makes and Models of Vehicles
+            </p>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+          </div>
 
-            {/* Right Side - Content */}
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Car Brands We Service
-              </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                We service all major makes and models using manufacturer-approved parts and 
-                the latest diagnostic equipment. Our certified technicians have experience 
-                with European, Asian, and American vehicles, ensuring quality service 
-                regardless of your car's brand.
-              </p>
-
-              {/* Brand List */}
-              <div className="grid grid-cols-2 gap-4">
-                {carBrands.map((brand, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <Check className="text-blue-600 w-5 h-5" />
-                    <span className="text-gray-700 font-medium">{brand}</span>
-                  </div>
-                ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-px bg-gray-200 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+            {brands.map((brand) => (
+              <div key={brand.id} className="bg-white p-8 flex flex-col items-center justify-center hover:bg-gray-50 transition-colors group">
+                <div className="relative w-full h-12 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110">
+                  <img
+                    src={brand.logo}
+                    alt={`${brand.name} logo`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="mt-4 text-xs font-bold text-gray-400 group-hover:text-gray-900 transition-colors uppercase tracking-widest">{brand.name}</span>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
