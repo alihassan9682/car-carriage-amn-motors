@@ -12,11 +12,33 @@ const ContactPage = () => {
     message: ''
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<'' | 'loading' | 'success' | 'error'>('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form Data:', formData)
-    alert('Message Sent!')
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    setStatus('loading')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, subject: formData.subject || 'General Contact' })
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+        alert('Message sent successfully!')
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (err) {
+      console.error(err)
+      setStatus('error')
+      alert('Failed to send message. Please try again later.')
+    } finally {
+      setTimeout(() => setStatus(''), 5000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -38,19 +60,19 @@ const ContactPage = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
+
           {/* Left Column - Contact Info */}
           <div>
             <h2 className="text-2xl font-bold text-blue-600 mb-4">Get In Touch</h2>
             <p className="text-gray-600 mb-8">Have a query or need a quote? Call us or fill out the form.</p>
-            
+
             <div className="space-y-6">
               {/* Address */}
               <div className="flex items-start space-x-4">
                 <MapPin className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Address</h3>
-                  <p className="text-gray-600">Unit 3, Business Park, Shankill, Dublin</p>
+                  <p className="text-gray-600">Kilbride Road, Ballymacarney, Hollystown, Co. Meath, D15 T622, Ireland</p>
                 </div>
               </div>
 
@@ -59,7 +81,7 @@ const ContactPage = () => {
                 <Phone className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-600">(01) 123 4567</p>
+                  <p className="text-gray-600">086 177 0636</p>
                 </div>
               </div>
 
@@ -68,7 +90,7 @@ const ContactPage = () => {
                 <Mail className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p className="text-gray-600">info@amnmotors.ie</p>
+                  <p className="text-gray-600">Info@amnmotors.com</p>
                 </div>
               </div>
             </div>
@@ -81,12 +103,16 @@ const ContactPage = () => {
               </div>
               <div className="space-y-2 text-gray-600">
                 <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span>9am - 6pm</span>
+                  <span>Monday - Thursday</span>
+                  <span>8:30am - 6pm</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Friday</span>
+                  <span>8:30am - 1pm</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Saturday</span>
-                  <span>9am - 1pm</span>
+                  <span>Closed</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
@@ -99,7 +125,7 @@ const ContactPage = () => {
           {/* Right Column - Contact Form */}
           <div className="bg-white p-8 rounded-lg shadow-sm">
             <h3 className="text-xl font-semibold text-gray-900 mb-6">Send us a Message</h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <input
@@ -173,7 +199,16 @@ const ContactPage = () => {
         {/* Map Section */}
         <div className="mt-16">
           <div className="bg-gray-300 h-96 rounded-lg flex items-center justify-center">
-            <p className="text-gray-600 text-lg font-medium">Google Maps Placeholder</p>
+            <div className="h-[400px] w-full rounded-xl overflow-hidden border border-gray-200">
+              <iframe
+                title="AMN Motors Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2376.404461037053!2d-6.3871528!3d53.4433558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867136a54ce1f61%3A0x3178c63d9659878f!2sAMN%20MOTORS%20LTD!5e0!3m2!1sen!2s!4v1767873298730!5m2!1sen!2s"
+                className="w-full h-full border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
       </div>

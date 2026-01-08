@@ -226,18 +226,18 @@ const AboutPage = () => {
 <div className='h-3/4'>
   <h3 className="text-2xl font-bold text-gray-900 mb-6">Find Us</h3>
 
-  <div className="h-full w-full rounded-xl overflow-hidden border border-gray-200">
-    <iframe
-      title="AMN Motors Location"
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3636.7487128375588!2d74.3440384!3d31.506432!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919018ac358e067%3A0x0!2zMzFCDU5JIDQ0LjMiTiA3NMKwMjAnOTAuMCJF!5e0!3m2!1sen!2s!4vYOUR_TIMESTAMP"
-      width="100%"
-      height="100%"
-      className="border-0"
-    //   allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
+ <div className="h-[400px] w-full rounded-xl overflow-hidden border border-gray-200">
+  <iframe
+    title="AMN Motors Location"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2376.404461037053!2d-6.3871528!3d53.4433558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867136a54ce1f61%3A0x3178c63d9659878f!2sAMN%20MOTORS%20LTD!5e0!3m2!1sen!2s!4v1767873298730!5m2!1sen!2s"
+    className="w-full h-full border-0"
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
+
+
 </div>
 
 
