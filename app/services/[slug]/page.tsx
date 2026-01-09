@@ -15,56 +15,55 @@ const serviceDetailsData = {
     'tyres-dublin': {
         title: 'Tyres Dublin',
         description: 'We offer a wide range of premium and budget tyres for all vehicle types. Our expert team provides professional fitting, balancing, and alignment services to ensure your safety on Dublin roads.',
-        image: 'https://images.unsplash.com/photo-1545094254-06bc0c78a044?auto=format&fit=crop&w=800&q=80',
-        points: ['Tyre Fitting & Balancing', 'Wheel Alignment', 'Puncture Repair', 'Winter Tyre Specialists', 'All Major Brands Available', 'Pressure Monitoring']
+      image: 'https://plus.unsplash.com/premium_photo-1675810094370-a4201445776f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+,        points: ['Tyre Fitting & Balancing', 'Wheel Alignment', 'Puncture Repair', 'Winter Tyre Specialists', 'All Major Brands Available', 'Pressure Monitoring']
     },
     'water-pumps': {
         title: 'Water Pumps',
         description: 'The water pump is the heart of your engine\'s cooling system. We provide specialist replacement and repair services to prevent engine overheating and ensure optimal performance.',
-        image: 'https://images.unsplash.com/photo-1504222490345-ca0f63600399?auto=format&fit=crop&w=800&q=80',
-        points: ['System Leak Analysis', 'Pump Replacement', 'Coolant Flush', 'Overheating Diagnosis', 'Gasket Replacement', 'Belt Inspection']
+image:'/pump.png',     
+   points: ['System Leak Analysis', 'Pump Replacement', 'Coolant Flush', 'Overheating Diagnosis', 'Gasket Replacement', 'Belt Inspection']
     },
     'radiators': {
         title: 'Radiators',
         description: 'A faulty radiator can lead to serious engine damage. We offer professional radiator repair, flushing, and replacement services to keep your engine running cool.',
-        image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
-        points: ['Radiator Repair', 'Flush & Fill Service', 'Hose Replacement', 'Thermostat Testing', 'Fan Motor Repair', 'Cooling System Pressure Test']
+      image:'/radiators.png'
+,        points: ['Radiator Repair', 'Flush & Fill Service', 'Hose Replacement', 'Thermostat Testing', 'Fan Motor Repair', 'Cooling System Pressure Test']
     },
     'exhausts': {
         title: 'Exhausts',
         description: 'From minor leaks to full system replacements, we handle all exhaust related issues. A healthy exhaust improves fuel efficiency and reduces harmful emissions.',
-        image: 'https://images.unsplash.com/photo-1625462285148-2834b9777559?auto=format&fit=crop&w=800&q=80',
-        points: ['Exhaust Repair & Fitting', 'Catalytic Converter Test', 'Emission Checks', 'Muffler Replacement', 'Bracket & Hanger Repair', 'System Performance Tuning']
+image:'/exhuasts.png',        points: ['Exhaust Repair & Fitting', 'Catalytic Converter Test', 'Emission Checks', 'Muffler Replacement', 'Bracket & Hanger Repair', 'System Performance Tuning']
     },
     'alternators': {
         title: 'Alternators',
         description: 'Charging issues are often traced back to the alternator. We provide expert diagnostic and replacement services for all vehicle charging systems.',
-        image: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=800&q=80',
+      image: "/alternators.png",
         points: ['Charging System Test', 'Alternator Replacement', 'Voltage Regulator Check', 'Drive Belt Inspection', 'Battery Connection Clean', 'Electrical Load Test']
     },
     'starter-motors': {
         title: 'Starter Motors',
         description: 'If your car won\'t start, the starter motor is a likely culprit. Our technicians can quickly diagnose and replace faulty starters to get you back on the road.',
-        image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80',
+      image: '/statermotors.png',
         points: ['Ignition System Test', 'Starter Motor Replacement', 'Solenoid Repair', 'Cabling Inspection', 'Key Fob Battery Check', 'Neutral Safety Switch Test']
     },
     'car-breakdowns': {
         title: 'Car Breakdowns',
         description: 'Stranded on the side of the road? Our breakdown recovery and repair service is here to help. We provide timely assistance to get your vehicle to our workshop safely.',
-        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80',
+      image: '/breakdown.png',
         points: ['Emergency Towing', 'Roadside Assistance', 'On-Site Diagnostics', 'Battery Jump Starts', 'Flat Tyre Assistance', 'Secure Vehicle Storage']
     },
     'changing-timing-belts': {
         title: 'Changing Timing Belts',
         description: 'A snapped timing belt can cause catastrophic engine damage. We provide preventative replacement services following manufacturer recommendations to protect your engine.',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
-        points: ['Belt & Tensioner Kit', 'Water Pump Sync', 'Pulley Inspection', 'Precise Timing Settings', 'Engine Performance Check', 'Camshaft Seal Replacement']
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80'
+,        points: ['Belt & Tensioner Kit', 'Water Pump Sync', 'Pulley Inspection', 'Precise Timing Settings', 'Engine Performance Check', 'Camshaft Seal Replacement']
     },
     'car-battery-replacement': {
         title: 'Car Battery Replacement',
         description: 'Don\'t let a dead battery ruin your day. We stock a wide range of high-quality batteries for all vehicles and provide professional testing and installation.',
-        image: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=800&q=80',
-        points: ['Battery Health Analysis', 'Professional Installation', 'Terminal Cleaning', 'Alternator Output Test', 'Parasitic Drain Check', 'Old Battery Recycling']
+      image: 'https://plus.unsplash.com/premium_photo-1658527217852-a4fba95fcd66?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+,        points: ['Battery Health Analysis', 'Professional Installation', 'Terminal Cleaning', 'Alternator Output Test', 'Parasitic Drain Check', 'Old Battery Recycling']
     },
     'fault-diagnosis': {
         title: 'Fault Diagnosis',
@@ -75,20 +74,20 @@ const serviceDetailsData = {
     'light-repairs': {
         title: 'Light Repairs',
         description: 'Broken headlights or indicators? We provide quick and efficient bulb and light assembly repairs to ensure your visibility and compliance with road safety laws.',
-        image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80',
-        points: ['Bulb Replacement', 'Headlight Restoration', 'Lens Repair', 'Wiring Inspection', 'Switch Diagnostics', 'Alignment & Levelling']
+      image: 'https://images.unsplash.com/photo-1748550729817-b3b810be9603?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+,        points: ['Bulb Replacement', 'Headlight Restoration', 'Lens Repair', 'Wiring Inspection', 'Switch Diagnostics', 'Alignment & Levelling']
     },
     'breakdowns-dublin': {
         title: 'Breakdowns Dublin',
         description: 'Specialized breakdown support for the Dublin area. We know the local routes and can reach you quickly to provide recovery or roadside fixes.',
-        image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80',
-        points: ['Local Recovery Service', 'Rapid Response Team', 'City Center Specialist', 'Motorway Assistance', 'Fuel Delivery', 'Lockout Service']
+      image: '/dublin.png'
+,        points: ['Local Recovery Service', 'Rapid Response Team', 'City Center Specialist', 'Motorway Assistance', 'Fuel Delivery', 'Lockout Service']
     },
     'none-starters': {
         title: 'None Starters',
         description: 'If your vehicle simply won\'t start, our experts will find the root cause—whether it\'s fuel, air, spark, or electrical—and provide a lasting solution.',
-        image: 'https://images.unsplash.com/photo-1530046339160-ce3e5b0c7a0f?auto=format&fit=crop&w=800&q=80',
-        points: ['Fuel Pump Testing', 'Spark Plug Inspection', 'Immobilizer Diagnostics', 'Air Intake Check', 'ECM/PCM Analysis', 'Compression Testing']
+      image: '/nonestarters.png'
+,        points: ['Fuel Pump Testing', 'Spark Plug Inspection', 'Immobilizer Diagnostics', 'Air Intake Check', 'ECM/PCM Analysis', 'Compression Testing']
     },
     'brake-pads': {
         title: 'Brake Pads',
@@ -99,14 +98,14 @@ const serviceDetailsData = {
     'suspension': {
         title: 'Suspension',
         description: 'Enjoy a smoother ride and better handling. We repair and replace shocks, struts, and steering components to restore your vehicle\'s comfort and stability.',
-        image: 'https://images.unsplash.com/photo-1601362840469-51e4d8d59085?auto=format&fit=crop&w=800&q=80',
-        points: ['Shock Absorbers', 'Strut Replacement', 'Ball Joint Repair', 'Control Arm Check', 'Bushings & Bearings', 'Ride Height Adjustment']
+      image: "/suspension.png"
+,        points: ['Shock Absorbers', 'Strut Replacement', 'Ball Joint Repair', 'Control Arm Check', 'Bushings & Bearings', 'Ride Height Adjustment']
     },
     'fuel-injectors': {
         title: 'Fuel Injectors',
         description: 'Clean and efficient fuel delivery is key to engine performance. We provide specialist testing, cleaning, and replacement of fuel injectors for petrol and diesel engines.',
-        image: 'https://images.unsplash.com/photo-1538644026-302a9833cb91?auto=format&fit=crop&w=800&q=80',
-        points: ['Ultrasonic Cleaning', 'Flow Rate Testing', 'Seal Replacement', 'Diesel Injector Experts', 'Fuel Rail Inspection', 'Efficiency Analysis']
+      image: '/fuel.png'
+,        points: ['Ultrasonic Cleaning', 'Flow Rate Testing', 'Seal Replacement', 'Diesel Injector Experts', 'Fuel Rail Inspection', 'Efficiency Analysis']
     },
     'break-discs': {
         title: 'Break Discs',
@@ -117,20 +116,20 @@ const serviceDetailsData = {
     'steering-racks': {
         title: 'Steering Racks',
         description: 'Leaking or heavy steering? Our expert team can repair or replace steering racks and pumps to restore precise control to your vehicle.',
-        image: 'https://images.unsplash.com/photo-1506456013-14979e2c6596?auto=format&fit=crop&w=800&q=80',
-        points: ['Power Steering Leak Fix', 'Rack & Pinion Repair', 'Pump Replacement', 'Fluid Flush', 'Tie Rod End Check', 'Alignment Integration']
+      image: '/racks.png'
+,        points: ['Power Steering Leak Fix', 'Rack & Pinion Repair', 'Pump Replacement', 'Fluid Flush', 'Tie Rod End Check', 'Alignment Integration']
     },
     'drive-shafts': {
         title: 'Drive Shafts',
         description: 'Clicking or vibration while driving? We specialize in CV joint and drive shaft repairs to maintain smooth power delivery to your wheels.',
-        image: 'https://images.unsplash.com/photo-1549419130-f9f30349b1a5?auto=format&fit=crop&w=800&q=80',
-        points: ['CV Joint Replacement', 'Drive Shaft Balancing', 'Boot Repair & Grease', 'U-Joint Service', 'Axle Inspection', 'Drivetrain Diagnostics']
+      image: '/image.png'
+,        points: ['CV Joint Replacement', 'Drive Shaft Balancing', 'Boot Repair & Grease', 'U-Joint Service', 'Axle Inspection', 'Drivetrain Diagnostics']
     },
     'differentials': {
         title: 'Differentials',
         description: 'Strange noises from the rear of the car? We provide expert differential repair and fluid change services for all rear-wheel and all-wheel-drive vehicles.',
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80',
-        points: ['Gear Inspection', 'Bearing Replacement', 'Seal & Gasket Fix', 'Fluid Change', 'LSD Specialist Service', 'Noise Diagnosis']
+      image: '/diff.png'
+,        points: ['Gear Inspection', 'Bearing Replacement', 'Seal & Gasket Fix', 'Fluid Change', 'LSD Specialist Service', 'Noise Diagnosis']
     }
 }
 

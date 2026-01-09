@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Wrench, Car, Award, Check } from 'lucide-react'
 
 const FeaturesAndBrands = () => {
@@ -10,19 +11,22 @@ const FeaturesAndBrands = () => {
       icon: Wrench,
       title: 'Modern Diagnostics',
       description: 'Using the latest computer scanning tools and diagnostic equipment to identify issues quickly and accurately.',
-      buttonText: 'Read More'
+      buttonText: 'Read More',
+      href: '/services'
     },
     {
       icon: Car,
       title: 'NCT Preparation',
       description: 'Comprehensive pre-NCT inspections and repairs to ensure your vehicle passes the test first time.',
-      buttonText: 'Read More'
+      buttonText: 'Read More',
+      href: '/services'
     },
     {
       icon: Award,
       title: 'Expert Repairs',
       description: 'Certified mechanics with the latest technology and manufacturer-approved parts for all repairs.',
-      buttonText: 'Read More'
+      buttonText: 'Read More',
+      href: '/services'
     }
   ]
 
@@ -58,10 +62,10 @@ const FeaturesAndBrands = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
-                  <button className="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center justify-center mx-auto">
+                  <Link href={feature.href} className="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center justify-center mx-auto">
                     {feature.buttonText}
                     <span className="ml-2">→</span>
-                  </button>
+                  </Link>
                 </div>
               )
             })}
