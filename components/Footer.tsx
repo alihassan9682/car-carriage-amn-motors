@@ -77,15 +77,15 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6 border-b-2 border-blue-500 w-12 pb-2">Opening Hours</h3>
             <div className="space-y-3 text-gray-400">
               <div className="flex items-center justify-between">
-                <span className="flex items-center"><Clock className="w-4 h-4 mr-2 text-blue-500" /> Mon-Thu</span>
-                <span>8:30am - 6pm</span>
+                <span className="flex items-center"><Clock className="w-4 h-4 mr-2 text-blue-500" /> Mon-Sat</span>
+                <span>9:00am - 6pm</span>
               </div>
-              <div className="flex items-center justify-between">
+              {/* <div className="flex items-center justify-between">
                 <span className="flex items-center"><Clock className="w-4 h-4 mr-2 text-blue-500" /> Fri</span>
                 <span>8:30am - 1pm</span>
-              </div>
+              </div> */}
               <div className="flex items-center justify-between">
-                <span className="flex items-center"><Clock className="w-4 h-4 mr-2 text-red-500" /> Sat-Sun</span>
+                <span className="flex items-center"><Clock className="w-4 h-4 mr-2 text-red-500" /> Sun</span>
                 <span>Closed</span>
               </div>
             </div>
