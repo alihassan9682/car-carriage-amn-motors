@@ -62,10 +62,10 @@ const FeaturesAndBrands = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
-                  <Link href={feature.href} className="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center justify-center mx-auto">
+                  {/* <Link href={feature.href} className="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center justify-center mx-auto">
                     {feature.buttonText}
                     <span className="ml-2">→</span>
-                  </Link>
+                  </Link> */}
                 </div>
               )
             })}
